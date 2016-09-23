@@ -3,6 +3,7 @@ package logstash
 import (
 	"encoding/json"
 	"fmt"
+	"strings"
 
 	"github.com/vend/logrus"
 )
@@ -46,6 +47,13 @@ func (f *LogstashFormatter) Format(entry *logrus.Entry) ([]byte, error) {
 		if ok {
 			fields["fields.message"] = v
 		}
+
+		// A hack.
+		// If the string is encapsulated in brackets, trim the brackets
+		if string(entry.Message[0]) == "[" {
+			entry.Message = strings.Trim(entry.Message, "[]")
+		}
+
 		fields["message"] = entry.Message
 	}
 
