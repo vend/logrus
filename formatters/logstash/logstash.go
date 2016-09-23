@@ -39,15 +39,18 @@ func (f *LogstashFormatter) Format(entry *logrus.Entry) ([]byte, error) {
 
 	fields["@timestamp"] = entry.Time.Format(timeStampFormat)
 
-	// set message field
-	v, ok := entry.Data["message"]
-	if ok {
-		fields["fields.message"] = v
+	// If a message was provided at time of logging, set that as the `message`
+	// and move the message provided as a field to `field.message`
+	if entry.Message != "" {
+		v, ok := entry.Data["message"]
+		if ok {
+			fields["fields.message"] = v
+		}
+		fields["message"] = entry.Message
 	}
-	fields["message"] = entry.Message
 
 	// set level field
-	v, ok = entry.Data["level"]
+	v, ok := entry.Data["level"]
 	if ok {
 		fields["fields.level"] = v
 	}
