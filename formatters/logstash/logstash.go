@@ -23,7 +23,7 @@ func (f *LogstashFormatter) Format(entry *logrus.Entry) ([]byte, error) {
 		switch v := v.(type) {
 		case error:
 			// Otherwise errors are ignored by `encoding/json`
-			// https://github.com/vend/logrus/issues/377
+			// https://github.com/Sirupsen/logrus/issues/377
 			fields[k] = v.Error()
 		default:
 			fields[k] = v
