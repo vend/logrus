@@ -7,7 +7,7 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/Sirupsen/logrus"
+	"github.com/vend/logrus"
 	"github.com/stretchr/testify/assert"
 )
 
