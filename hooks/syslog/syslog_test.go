@@ -1,7 +1,7 @@
 package logrus_syslog
 
 import (
-	"github.com/Sirupsen/logrus"
+	"github.com/vend/logrus"
 	"log/syslog"
 	"testing"
 )
