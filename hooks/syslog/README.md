@@ -5,13 +5,8 @@
 ```go
 import (
   "log/syslog"
-<<<<<<< HEAD
   "github.com/vend/logrus"
   logrus_syslog "github.com/vend/logrus/hooks/syslog"
-=======
-  "github.com/sirupsen/logrus"
-  lSyslog "github.com/sirupsen/logrus/hooks/syslog"
->>>>>>> sirupson/master
 )
 
 func main() {
@@ -24,18 +19,14 @@ func main() {
 }
 ```
 
-If you want to connect to local syslog (Ex. "/dev/log" or "/var/run/syslog" or "/var/run/log"). Just assign empty string to the first two parameters of `NewSyslogHook`. It should look like the following.
+If you want to connect to local syslog (Ex. "/dev/log" or "/var/run/syslog" or "/var/run/log"). Just assign empty string
+to the first two parameters of `NewSyslogHook`. It should look like the following.
 
 ```go
 import (
   "log/syslog"
-<<<<<<< HEAD
   "github.com/vend/logrus"
   logrus_syslog "github.com/vend/logrus/hooks/syslog"
-=======
-  "github.com/sirupsen/logrus"
-  lSyslog "github.com/sirupsen/logrus/hooks/syslog"
->>>>>>> sirupson/master
 )
 
 func main() {

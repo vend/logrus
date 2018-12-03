@@ -7,11 +7,7 @@ The simplest way to use Logrus is simply the package-level exported logger:
   package main
 
   import (
-<<<<<<< HEAD
     log "github.com/vend/logrus"
-=======
-    log "github.com/sirupsen/logrus"
->>>>>>> sirupson/master
   )
 
   func main() {
@@ -25,10 +21,6 @@ The simplest way to use Logrus is simply the package-level exported logger:
 Output:
   time="2015-09-07T08:48:33Z" level=info msg="A walrus appears" animal=walrus number=1 size=10
 
-<<<<<<< HEAD
 For a full guide visit https://github.com/vend/logrus
-=======
-For a full guide visit https://github.com/sirupsen/logrus
->>>>>>> sirupson/master
 */
 package logrus
