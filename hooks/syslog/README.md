@@ -11,7 +11,7 @@ import (
 
 func main() {
   log       := logrus.New()
-  hook, err := logrus_syslog.NewSyslogHook("udp", "localhost:514", syslog.LOG_INFO, "")
+  hook, err := lSyslog.NewSyslogHook("udp", "localhost:514", syslog.LOG_INFO, "")
 
   if err == nil {
     log.Hooks.Add(hook)
@@ -19,7 +19,8 @@ func main() {
 }
 ```
 
-If you want to connect to local syslog (Ex. "/dev/log" or "/var/run/syslog" or "/var/run/log"). Just assign empty string to the first two parameters of `NewSyslogHook`. It should look like the following.
+If you want to connect to local syslog (Ex. "/dev/log" or "/var/run/syslog" or "/var/run/log"). Just assign empty string
+to the first two parameters of `NewSyslogHook`. It should look like the following.
 
 ```go
 import (
@@ -30,7 +31,7 @@ import (
 
 func main() {
   log       := logrus.New()
-  hook, err := logrus_syslog.NewSyslogHook("", "", syslog.LOG_INFO, "")
+  hook, err := lSyslog.NewSyslogHook("", "", syslog.LOG_INFO, "")
 
   if err == nil {
     log.Hooks.Add(hook)
