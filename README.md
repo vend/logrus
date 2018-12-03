@@ -427,8 +427,8 @@ and provides:
 
 ```go
 import(
-  "github.com/sirupsen/logrus"
-  "github.com/sirupsen/logrus/hooks/test"
+  "github.com/vend/logrus"
+  "github.com/vend/logrus/hooks/test"
   "github.com/stretchr/testify/assert"
   "testing"
 )
